@@ -12,6 +12,23 @@
 		8A2CC2D016B6B987007A2CBA /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A2CC2DE16B6BDA6007A2CBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AD911B1162D9E2200C9D287;
+			remoteInfo = GBToolbox;
+		};
+		8A2CC2E016B6BDA6007A2CBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A0C4E34165FA60C00A990FB;
+			remoteInfo = GBToolboxUnitTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		8A2CC2C316B6B987007A2CBA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -31,6 +48,7 @@
 		8A2CC2CC16B6B987007A2CBA /* GBVersionTracking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-Prefix.pch"; sourceTree = "<group>"; };
 		8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
 		8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
+		8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBToolbox.xcodeproj; path = ../GBToolbox/GBToolbox.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +66,7 @@
 		8A2CC2BA16B6B987007A2CBA = {
 			isa = PBXGroup;
 			children = (
+				8A2CC2E316B6BDB3007A2CBA /* Libraries */,
 				8A2CC2CA16B6B987007A2CBA /* GBVersionTracking */,
 				8A2CC2C716B6B987007A2CBA /* Frameworks */,
 				8A2CC2C616B6B987007A2CBA /* Products */,
@@ -86,6 +105,23 @@
 				8A2CC2CC16B6B987007A2CBA /* GBVersionTracking-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A2CC2DA16B6BDA6007A2CBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A2CC2DF16B6BDA6007A2CBA /* libGBToolbox.a */,
+				8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A2CC2E316B6BDB3007A2CBA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,12 +163,35 @@
 			mainGroup = 8A2CC2BA16B6B987007A2CBA;
 			productRefGroup = 8A2CC2C616B6B987007A2CBA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8A2CC2DA16B6BDA6007A2CBA /* Products */;
+					ProjectRef = 8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8A2CC2C416B6B987007A2CBA /* GBVersionTracking */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8A2CC2DF16B6BDA6007A2CBA /* libGBToolbox.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGBToolbox.a;
+			remoteRef = 8A2CC2DE16B6BDA6007A2CBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GBToolboxUnitTests.octest;
+			remoteRef = 8A2CC2E016B6BDA6007A2CBA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A2CC2C116B6B987007A2CBA /* Sources */ = {
@@ -167,8 +226,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -187,7 +248,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -236,6 +299,7 @@
 				8A2CC2D516B6B987007A2CBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
