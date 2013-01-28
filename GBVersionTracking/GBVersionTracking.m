@@ -10,4 +10,25 @@
 
 @implementation GBVersionTracking
 
+//store a version crumb tail in NSUserDefaults
++(void)track {
+    
+}
+
++(BOOL)isFirstLaunchEver {
+    
+}
+
++(BOOL)isFirstLaunchAfterUpdate {
+    
+}
+
++(NSString *)lastVersion {
+    
+}
+
++(NSArray *)versionHistory {
+    
+}
+
 @end

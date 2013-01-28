@@ -10,4 +10,10 @@
 
 @interface GBVersionTracking : NSObject
 
++(void)track;                       //Call this in application:didFinishLaunching:withOptions:
++(BOOL)isFirstLaunchEver;           //First time ever the app is launched, irrespective of version?
++(BOOL)isFirstLaunchAfterUpdate;    //Is this the first time this particular version is being launched?
++(NSString *)lastVersion;
++(NSArray *)versionHistory;
+
 @end
