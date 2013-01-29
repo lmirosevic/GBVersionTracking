@@ -44,8 +44,9 @@
  l(@"Previous build: %@", [GBVersionTracking previousBuild]);
  l(@"Build history: %@", [GBVersionTracking buildHistory]);
  
- 
- Required Libraries (make sure header search path is set up correctly in parent project, there is a linker flag -ObjC):
+ Required libraries (add dependency, link, -ObjC linker flag, header search path in superproject):
  * GBToolbox
+ * GBAnalytics
+ * GBVersionTracking
  
  */
