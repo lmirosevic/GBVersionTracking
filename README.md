@@ -18,25 +18,22 @@ Call this on each app launch in `application:didFinishLaunching:withOptions:`
 [GBVersionTracking track];
 ```
 
-Call this anywhere:
+Then call these whenever you want (in these examples the user has launched a bunch of previous version but this is the first time he's launched version 3.0):
 ```objective-c
-NSLog(@"First launch ever?: %@", _b([GBVersionTracking isFirstLaunchEver]));
-NSLog(@"First launch for this version?: %@", _b([GBVersionTracking isFirstLaunchForVersion]));
-NSLog(@"First launch for this build?: %@", _b([GBVersionTracking isFirstLaunchForBuild]));
+[GBVersionTracking isFirstLaunchEver];				//Returns: NO
+[GBVersionTracking isFirstLaunchForVersion];		//Returns: YES
+[GBVersionTracking isFirstLaunchForBuild];			//Returns: YES
  
-NSLog(@"Current version: %@", [GBVersionTracking currentVersion]);
-NSLog(@"Previous version: %@", [GBVersionTracking previousVersion]);
-NSLog(@"Version history: %@", [GBVersionTracking versionHistory]);
+[GBVersionTracking currentVersion];					//Returns: @"3.0"
+[GBVersionTracking previousVersion];				//Returns: @"2.1"
+[GBVersionTracking versionHistory];					//Returns: [@"1.0", @"2.0", @"2.1", @"3.0"]
  
-NSLog(@"Current build: %@", [GBVersionTracking currentBuild]);
-NSLog(@"Previous build: %@", [GBVersionTracking previousBuild]);
-NSLog(@"Build history: %@", [GBVersionTracking buildHistory]);
+[GBVersionTracking currentBuild];					//Returns: @"3000"
+[GBVersionTracking previousBuild];					//Returns: @"2102"
+[GBVersionTracking buildHistory];					//Returns: [@"1000", @"2043", @"2107", @"3004"]
  ```
 
-N.B.: `_b` is a macro from GBToolbox defined as:
-```c
-#define _b(expression) expression ? @"YES" : @"NO"
-```
+N.B.: The build and version numbers are whatever you defined in your Info.plist
 
 Dependencies
 ------------
