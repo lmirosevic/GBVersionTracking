@@ -18,7 +18,7 @@ Call this on each app launch in `application:didFinishLaunching:withOptions:`
 [GBVersionTracking track];
 ```
 
-Then call these whenever you want (in these examples the user has launched a bunch of previous version but this is the first time he's launched version 3.0):
+Then call these whenever you want (in these examples the user has launched a bunch of previous versions, and this is the first time he's launched version 3.0):
 ```objective-c
 [GBVersionTracking isFirstLaunchEver];				//Returns: NO
 [GBVersionTracking isFirstLaunchForVersion];		//Returns: YES
