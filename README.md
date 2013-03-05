@@ -1,7 +1,7 @@
 GBVersionTracking
 ============
 
-Track which versions of your iOS app a user has previously installed.
+Track which versions of your iOS or Mac OS X app a user has previously installed.
 
 Usage
 ------------
