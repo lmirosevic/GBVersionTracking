@@ -6,12 +6,6 @@ Track which versions of your iOS app a user has previously installed.
 Usage
 ------------
 
-First import header:
-
-```objective-c
-#import "GBVersionTracking.h"
-```
-
 Call this on each app launch in `application:didFinishLaunching:withOptions:`
 
 ```objective-c
@@ -19,6 +13,7 @@ Call this on each app launch in `application:didFinishLaunching:withOptions:`
 ```
 
 Then call these whenever you want (in these examples the user has launched a bunch of previous versions, and this is the first time he's launched version 3.0):
+
 ```objective-c
 [GBVersionTracking isFirstLaunchEver];				//Returns: NO
 [GBVersionTracking isFirstLaunchForVersion];		//Returns: YES
@@ -33,14 +28,28 @@ Then call these whenever you want (in these examples the user has launched a bun
 [GBVersionTracking buildHistory];					//Returns: [@"1000", @"2043", @"2107", @"3004"]
  ```
 
-N.B.: The build and version numbers are whatever you defined in your Info.plist
+N.B.: The build and version numbers are whatever you define in your app's Info.plist
+
+Don't forget to import static library header (on iOS):
+
+```objective-c
+#import "GBVersionTracking.h" 						//iOS
+```
+
+...or framework header (on OS X):
+
+```objective-c
+#import <GBVersionTracking/GBVersionTracking.h> 	//OS X
+```
 
 Dependencies
 ------------
 
-Add dependency, link, -ObjC linker flag, header search path in superproject.
-
 * [GBToolbox](https://github.com/lmirosevic/GBToolbox)
+
+iOS: Add to your project's workspace, add dependency for GBVersionTracking-iOS, link with your binary, add -ObjC linker flag, add header search path.
+
+OS X: Add to your project's workspace, add dependency for GBVersionTracking-OSX, link with your binary.
 
 Copyright & License
 ------------
