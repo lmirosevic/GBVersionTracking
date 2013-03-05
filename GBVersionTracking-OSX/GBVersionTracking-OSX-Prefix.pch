@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'GBVersionTracking-OSX' target in the 'GBVersionTracking-OSX' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif

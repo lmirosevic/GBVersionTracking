@@ -11,9 +11,8 @@
 		8A2CC2CE16B6B987007A2CBA /* GBVersionTracking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */; };
 		8A2CC2D016B6B987007A2CBA /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */; };
 		8AD8352416E6004600F02D15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD8352316E6004600F02D15 /* Cocoa.framework */; };
-		8AD8352E16E6004600F02D15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AD8352C16E6004600F02D15 /* InfoPlist.strings */; };
-		8AD8353216E6004600F02D15 /* GBVersionTracking_OSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */; };
 		8AD8353A16E600A300F02D15 /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */; };
+		8AD8355016E6039E00F02D15 /* GBVersionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGBVersionTracking.a; path = "libGBVersionTracking-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2CC2C816B6B987007A2CBA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A2CC2CC16B6B987007A2CBA /* GBVersionTracking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-Prefix.pch"; sourceTree = "<group>"; };
 		8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
@@ -79,11 +78,7 @@
 		8AD8352616E6004600F02D15 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8AD8352716E6004600F02D15 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8AD8352816E6004600F02D15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8AD8352B16E6004600F02D15 /* GBVersionTracking-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GBVersionTracking-OSX-Info.plist"; sourceTree = "<group>"; };
-		8AD8352D16E6004600F02D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8AD8352F16E6004600F02D15 /* GBVersionTracking-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-OSX-Prefix.pch"; sourceTree = "<group>"; };
-		8AD8353016E6004600F02D15 /* GBVersionTracking_OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking_OSX.h; sourceTree = "<group>"; };
-		8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking_OSX.m; sourceTree = "<group>"; };
+		8AD8355116E604DB00F02D15 /* GBVersionTracking-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GBVersionTracking-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +106,6 @@
 			children = (
 				8A2CC2E316B6BDB3007A2CBA /* Libraries */,
 				8A2CC2CA16B6B987007A2CBA /* GBVersionTracking */,
-				8AD8352916E6004600F02D15 /* GBVersionTracking-OSX */,
 				8A2CC2C716B6B987007A2CBA /* Frameworks */,
 				8A2CC2C616B6B987007A2CBA /* Products */,
 			);
@@ -149,6 +143,7 @@
 		8A2CC2CB16B6B987007A2CBA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8AD8355116E604DB00F02D15 /* GBVersionTracking-Info.plist */,
 				8A2CC2CC16B6B987007A2CBA /* GBVersionTracking-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -182,26 +177,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		8AD8352916E6004600F02D15 /* GBVersionTracking-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				8AD8353016E6004600F02D15 /* GBVersionTracking_OSX.h */,
-				8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */,
-				8AD8352A16E6004600F02D15 /* Supporting Files */,
-			);
-			path = "GBVersionTracking-OSX";
-			sourceTree = "<group>";
-		};
-		8AD8352A16E6004600F02D15 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8AD8352B16E6004600F02D15 /* GBVersionTracking-OSX-Info.plist */,
-				8AD8352C16E6004600F02D15 /* InfoPlist.strings */,
-				8AD8352F16E6004600F02D15 /* GBVersionTracking-OSX-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -209,6 +184,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD8355016E6039E00F02D15 /* GBVersionTracking.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AD8352E16E6004600F02D15 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AD8353216E6004600F02D15 /* GBVersionTracking_OSX.m in Sources */,
 				8AD8353A16E600A300F02D15 /* GBVersionTracking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,17 +326,6 @@
 			targetProxy = 8AD8353816E6005A00F02D15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8AD8352C16E6004600F02D15 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8AD8352D16E6004600F02D15 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8A2CC2D116B6B987007A2CBA /* Debug */ = {
@@ -422,8 +385,12 @@
 				DSTROOT = /tmp/GBVersionTracking.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBVersionTracking/GBVersionTracking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"IPHONE=1",
+				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GBVersionTracking;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -434,8 +401,9 @@
 				DSTROOT = /tmp/GBVersionTracking.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBVersionTracking/GBVersionTracking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "IPHONE=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GBVersionTracking;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -457,11 +425,15 @@
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GBVersionTracking-OSX/GBVersionTracking-OSX-Prefix.pch";
+				GCC_PREFIX_HEADER = "GBVersionTracking/GBVersionTracking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"IPHONE=0",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "GBVersionTracking-OSX/GBVersionTracking-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GBVersionTracking/GBVersionTracking-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = GBVersionTracking;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -485,11 +457,12 @@
 				FRAMEWORK_VERSION = A;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GBVersionTracking-OSX/GBVersionTracking-OSX-Prefix.pch";
+				GCC_PREFIX_HEADER = "GBVersionTracking/GBVersionTracking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "IPHONE=0";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				INFOPLIST_FILE = "GBVersionTracking-OSX/GBVersionTracking-OSX-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GBVersionTracking/GBVersionTracking-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = GBVersionTracking;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
