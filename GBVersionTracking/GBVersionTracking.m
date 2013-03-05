@@ -8,7 +8,11 @@
 
 #import "GBVersionTracking.h"
 
-#import "GBToolbox.h"
+#if TARGET_OS_IPHONE
+    #import "GBToolbox.h"
+#else
+    #import <GBToolbox/GBToolbox.h>
+#endif
 
 // Allows making public interface a little simpler by wrapping all singleton instance methods inside class methods
 #define _controller [GBVersionTracking sharedController]

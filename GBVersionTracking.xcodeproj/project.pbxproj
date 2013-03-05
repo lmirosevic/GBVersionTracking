@@ -10,6 +10,10 @@
 		8A2CC2C916B6B987007A2CBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2CC2C816B6B987007A2CBA /* Foundation.framework */; };
 		8A2CC2CE16B6B987007A2CBA /* GBVersionTracking.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */; };
 		8A2CC2D016B6B987007A2CBA /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */; };
+		8AD8352416E6004600F02D15 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD8352316E6004600F02D15 /* Cocoa.framework */; };
+		8AD8352E16E6004600F02D15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8AD8352C16E6004600F02D15 /* InfoPlist.strings */; };
+		8AD8353216E6004600F02D15 /* GBVersionTracking_OSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */; };
+		8AD8353A16E600A300F02D15 /* GBVersionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +45,13 @@
 			remoteGlobalIDString = 8A0377FB16BFCD2F0096C448;
 			remoteInfo = GBToolbox.framework;
 		};
+		8AD8353816E6005A00F02D15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A0377FA16BFCD2F0096C448;
+			remoteInfo = "GBToolbox-OSX";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,12 +68,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGBVersionTracking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGBVersionTracking.a; path = "libGBVersionTracking-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2CC2C816B6B987007A2CBA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8A2CC2CC16B6B987007A2CBA /* GBVersionTracking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-Prefix.pch"; sourceTree = "<group>"; };
 		8A2CC2CD16B6B987007A2CBA /* GBVersionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking.h; sourceTree = "<group>"; };
 		8A2CC2CF16B6B987007A2CBA /* GBVersionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking.m; sourceTree = "<group>"; };
 		8A2CC2D916B6BDA6007A2CBA /* GBToolbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GBToolbox.xcodeproj; path = ../GBToolbox/GBToolbox.xcodeproj; sourceTree = "<group>"; };
+		8AD8352216E6004600F02D15 /* GBVersionTracking-OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "GBVersionTracking-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AD8352316E6004600F02D15 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		8AD8352616E6004600F02D15 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8AD8352716E6004600F02D15 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8AD8352816E6004600F02D15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8AD8352B16E6004600F02D15 /* GBVersionTracking-OSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GBVersionTracking-OSX-Info.plist"; sourceTree = "<group>"; };
+		8AD8352D16E6004600F02D15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8AD8352F16E6004600F02D15 /* GBVersionTracking-OSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBVersionTracking-OSX-Prefix.pch"; sourceTree = "<group>"; };
+		8AD8353016E6004600F02D15 /* GBVersionTracking_OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBVersionTracking_OSX.h; sourceTree = "<group>"; };
+		8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBVersionTracking_OSX.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +95,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8AD8351E16E6004600F02D15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AD8352416E6004600F02D15 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +111,7 @@
 			children = (
 				8A2CC2E316B6BDB3007A2CBA /* Libraries */,
 				8A2CC2CA16B6B987007A2CBA /* GBVersionTracking */,
+				8AD8352916E6004600F02D15 /* GBVersionTracking-OSX */,
 				8A2CC2C716B6B987007A2CBA /* Frameworks */,
 				8A2CC2C616B6B987007A2CBA /* Products */,
 			);
@@ -91,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */,
+				8AD8352216E6004600F02D15 /* GBVersionTracking-OSX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				8A2CC2C816B6B987007A2CBA /* Foundation.framework */,
+				8AD8352316E6004600F02D15 /* Cocoa.framework */,
+				8AD8352516E6004600F02D15 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,12 +172,52 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
+		8AD8352516E6004600F02D15 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AD8352616E6004600F02D15 /* AppKit.framework */,
+				8AD8352716E6004600F02D15 /* CoreData.framework */,
+				8AD8352816E6004600F02D15 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8AD8352916E6004600F02D15 /* GBVersionTracking-OSX */ = {
+			isa = PBXGroup;
+			children = (
+				8AD8353016E6004600F02D15 /* GBVersionTracking_OSX.h */,
+				8AD8353116E6004600F02D15 /* GBVersionTracking_OSX.m */,
+				8AD8352A16E6004600F02D15 /* Supporting Files */,
+			);
+			path = "GBVersionTracking-OSX";
+			sourceTree = "<group>";
+		};
+		8AD8352A16E6004600F02D15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AD8352B16E6004600F02D15 /* GBVersionTracking-OSX-Info.plist */,
+				8AD8352C16E6004600F02D15 /* InfoPlist.strings */,
+				8AD8352F16E6004600F02D15 /* GBVersionTracking-OSX-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8AD8351F16E6004600F02D15 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		8A2CC2C416B6B987007A2CBA /* GBVersionTracking */ = {
+		8A2CC2C416B6B987007A2CBA /* GBVersionTracking-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8A2CC2D316B6B987007A2CBA /* Build configuration list for PBXNativeTarget "GBVersionTracking" */;
+			buildConfigurationList = 8A2CC2D316B6B987007A2CBA /* Build configuration list for PBXNativeTarget "GBVersionTracking-iOS" */;
 			buildPhases = (
 				8A2CC2C116B6B987007A2CBA /* Sources */,
 				8A2CC2C216B6B987007A2CBA /* Frameworks */,
@@ -155,10 +228,29 @@
 			dependencies = (
 				8ACE945E16C1217D00527E0D /* PBXTargetDependency */,
 			);
-			name = GBVersionTracking;
+			name = "GBVersionTracking-iOS";
 			productName = GBVersionTracking;
 			productReference = 8A2CC2C516B6B987007A2CBA /* libGBVersionTracking.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		8AD8352116E6004600F02D15 /* GBVersionTracking-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AD8353716E6004600F02D15 /* Build configuration list for PBXNativeTarget "GBVersionTracking-OSX" */;
+			buildPhases = (
+				8AD8351D16E6004600F02D15 /* Sources */,
+				8AD8351E16E6004600F02D15 /* Frameworks */,
+				8AD8351F16E6004600F02D15 /* Headers */,
+				8AD8352016E6004600F02D15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AD8353916E6005A00F02D15 /* PBXTargetDependency */,
+			);
+			name = "GBVersionTracking-OSX";
+			productName = "GBVersionTracking-OSX";
+			productReference = 8AD8352216E6004600F02D15 /* GBVersionTracking-OSX.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -187,7 +279,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				8A2CC2C416B6B987007A2CBA /* GBVersionTracking */,
+				8A2CC2C416B6B987007A2CBA /* GBVersionTracking-iOS */,
+				8AD8352116E6004600F02D15 /* GBVersionTracking-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -216,12 +309,32 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		8AD8352016E6004600F02D15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AD8352E16E6004600F02D15 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A2CC2C116B6B987007A2CBA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8A2CC2D016B6B987007A2CBA /* GBVersionTracking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AD8351D16E6004600F02D15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AD8353216E6004600F02D15 /* GBVersionTracking_OSX.m in Sources */,
+				8AD8353A16E600A300F02D15 /* GBVersionTracking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +346,23 @@
 			name = libGBToolbox.a;
 			targetProxy = 8ACE945D16C1217D00527E0D /* PBXContainerItemProxy */;
 		};
+		8AD8353916E6005A00F02D15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GBToolbox-OSX";
+			targetProxy = 8AD8353816E6005A00F02D15 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AD8352C16E6004600F02D15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AD8352D16E6004600F02D15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8A2CC2D116B6B987007A2CBA /* Debug */ = {
@@ -311,6 +440,61 @@
 			};
 			name = Release;
 		};
+		8AD8353316E6004600F02D15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GBVersionTracking-OSX/GBVersionTracking-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "GBVersionTracking-OSX/GBVersionTracking-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		8AD8353416E6004600F02D15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GBVersionTracking-OSX/GBVersionTracking-OSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "GBVersionTracking-OSX/GBVersionTracking-OSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,11 +507,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8A2CC2D316B6B987007A2CBA /* Build configuration list for PBXNativeTarget "GBVersionTracking" */ = {
+		8A2CC2D316B6B987007A2CBA /* Build configuration list for PBXNativeTarget "GBVersionTracking-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8A2CC2D416B6B987007A2CBA /* Debug */,
 				8A2CC2D516B6B987007A2CBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AD8353716E6004600F02D15 /* Build configuration list for PBXNativeTarget "GBVersionTracking-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AD8353316E6004600F02D15 /* Debug */,
+				8AD8353416E6004600F02D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
