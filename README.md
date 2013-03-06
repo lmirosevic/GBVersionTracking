@@ -6,7 +6,7 @@ Track which versions of your iOS or Mac OS X app a user has previously installed
 Usage
 ------------
 
-Call this on each app launch in `application:didFinishLaunching:withOptions:`
+Call this on each app launch inside `application:didFinishLaunching:withOptions:` (iOS), or `-applicationDidFinishLaunching:` (OS X)
 
 ```objective-c
 [GBVersionTracking track];
