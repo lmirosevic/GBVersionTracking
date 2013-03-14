@@ -389,7 +389,6 @@
 					"DEBUG=1",
 					"IPHONE=1",
 				);
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = GBVersionTracking;
 				SKIP_INSTALL = YES;
 			};
@@ -402,7 +401,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GBVersionTracking/GBVersionTracking-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "IPHONE=1";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = GBVersionTracking;
 				SKIP_INSTALL = YES;
 			};
