@@ -49,7 +49,7 @@ Dependencies
 
 iOS: Add to your project's workspace, add dependency for GBVersionTracking-iOS, link with your binary, add -ObjC linker flag, add header search path.
 
-OS X: Add to your project's workspace, add dependency for GBVersionTracking-OSX, link with your binary.
+OS X: Add to your project's workspace, add dependency for GBVersionTracking-OSX, link with your binary, add "copy file" step to copy framework into bundle.
 
 Copyright & License
 ------------
