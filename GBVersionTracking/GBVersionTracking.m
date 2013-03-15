@@ -17,9 +17,9 @@
 // Allows making public interface a little simpler by wrapping all singleton instance methods inside class methods
 #define _controller [GBVersionTracking sharedController]
 
-static NSString *kGBVersionTrail = @"kGBVersionTrail";
-static NSString *kGBVersion = @"kGBVersion";
-static NSString *kGBBuild = @"kGBBuild";
+static NSString * const kGBVersionTrail = @"kGBVersionTrail";
+static NSString * const kGBVersion = @"kGBVersion";
+static NSString * const kGBBuild = @"kGBBuild";
 
 
 @interface GBVersionTracking ()
