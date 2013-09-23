@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8A2CC2DF16B6BDA6007A2CBA /* libGBToolbox.a */,
-				8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests.octest */,
+				8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests-iOS.octest */,
 				8ACE946316C1217D00527E0D /* GBToolbox.framework */,
 			);
 			name = Products;
@@ -232,7 +232,7 @@
 		8A2CC2BC16B6B987007A2CBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Goonbee;
 			};
 			buildConfigurationList = 8A2CC2BF16B6B987007A2CBA /* Build configuration list for PBXProject "GBVersionTracking" */;
@@ -267,10 +267,10 @@
 			remoteRef = 8A2CC2DE16B6BDA6007A2CBA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests.octest */ = {
+		8A2CC2E116B6BDA6007A2CBA /* GBToolboxUnitTests-iOS.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = GBToolboxUnitTests.octest;
+			path = "GBToolboxUnitTests-iOS.octest";
 			remoteRef = 8A2CC2E016B6BDA6007A2CBA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -411,7 +411,6 @@
 		8AD8353316E6004600F02D15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -442,7 +441,6 @@
 		8AD8353416E6004600F02D15 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
