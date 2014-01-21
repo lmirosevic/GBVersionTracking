@@ -30,26 +30,20 @@ Then call these whenever you want (in these examples the user has launched a bun
 
 N.B.: The build and version numbers are whatever you define in your app's Info.plist
 
-Don't forget to import static library header (on iOS):
+Don't forget to import header:
 
 ```objective-c
-#import "GBVersionTracking.h" 						//iOS
+#import <GBVersionTracking/GBVersionTracking.h>
 ```
 
-...or framework header (on OS X):
-
-```objective-c
-#import <GBVersionTracking/GBVersionTracking.h> 	//OS X
-```
-
-Dependencies
+Installation
 ------------
 
-* [GBToolbox](https://github.com/lmirosevic/GBToolbox)
+Use CocoaPods, add this to your project's Podfile and run `pod update`:
 
-iOS: Add to your project's workspace, add dependency for GBVersionTracking-iOS, link with your binary, add -ObjC linker flag, add header search path.
-
-OS X: Add to your project's workspace, add dependency for GBVersionTracking-OSX, link with your binary, add "copy file" step to copy framework into bundle.
+```
+pod 'GBVersionTracking'
+```
 
 Copyright & License
 ------------
