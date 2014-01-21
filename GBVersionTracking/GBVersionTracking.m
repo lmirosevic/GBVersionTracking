@@ -8,12 +8,6 @@
 
 #import "GBVersionTracking.h"
 
-#if TARGET_OS_IPHONE
-    #import "GBToolbox.h"
-#else
-    #import <GBToolbox/GBToolbox.h>
-#endif
-
 // Allows making public interface a little simpler by wrapping all singleton instance methods inside class methods
 #define _controller [GBVersionTracking sharedController]
 
@@ -36,7 +30,15 @@ static NSString * const kGBBuild = @"kGBBuild";
 
 #pragma mark - Storage
 
-_singleton(GBVersionTracking, sharedController)
++(GBVersionTracking *)sharedController {
+    static GBVersionTracking *sharedController;
+    @synchronized(self) {
+        if (!sharedController) {
+            sharedController = [GBVersionTracking new];
+        }
+        return sharedController;
+    }
+}
 
 #pragma mark - Public API
 
