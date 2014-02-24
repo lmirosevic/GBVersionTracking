@@ -107,6 +107,36 @@ static NSString * const kGBBuild = @"kGBBuild";
     return _controller.isFirstLaunchForBuild;
 }
 
++(BOOL)isFirstLaunchForVersion:(NSString *)version {
+    if ([[self currentVersion] isEqualToString:version]) {
+        return [self isFirstLaunchForVersion];
+    }
+    else {
+        return NO;
+    }
+}
+
++(BOOL)isFirstLaunchForBuild:(NSString *)build {
+    if ([[self currentBuild] isEqualToString:build]) {
+        return [self isFirstLaunchForBuild];
+    }
+    else {
+        return NO;
+    }
+}
+
++(void)callBlockOnFirstLaunchOfVersion:(NSString *)version block:(GBVersionTrackingHandlerBlock)block {
+    if ([self isFirstLaunchForVersion:version] && block) {
+        block();
+    }
+}
+
++(void)callBlockOnFirstLaunchOfBuild:(NSString *)build block:(GBVersionTrackingHandlerBlock)block {
+    if ([self isFirstLaunchForBuild:build] && block) {
+        block();
+    }
+}
+
 #pragma mark - Version
 
 +(NSString *)currentVersion {
