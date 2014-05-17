@@ -1,5 +1,4 @@
-GBVersionTracking
-============
+# GBVersionTracking ![Version](https://img.shields.io/cocoapods/v/GBVersionTracking.svg?style=flat)&nbsp;![License](https://img.shields.io/badge/license-Apache_2-green.svg?style=flat)
 
 Track which versions of your iOS or Mac OS X app a user has previously installed.
 
