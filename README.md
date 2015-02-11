@@ -11,7 +11,7 @@ Call this on each app launch inside `application:didFinishLaunching:withOptions:
 [GBVersionTracking track];
 ```
 
-Then call these whenever you want (in these examples the user has launched a bunch of previous versions, and this is the first time he's launched version 3.0):
+Then call these whenever you want (in these examples the user has launched a bunch of previous versions, and this is the first time he's launched the new version which is version 3.0):
 
 ```objective-c
 [GBVersionTracking isFirstLaunchEver];				//Returns: NO
@@ -20,10 +20,12 @@ Then call these whenever you want (in these examples the user has launched a bun
  
 [GBVersionTracking currentVersion];					//Returns: @"3.0"
 [GBVersionTracking previousVersion];				//Returns: @"2.1"
+[GBVersionTracking firstInstalledVersion];			//Returns: @"1.0"
 [GBVersionTracking versionHistory];					//Returns: [@"1.0", @"2.0", @"2.1", @"3.0"]
  
-[GBVersionTracking currentBuild];					//Returns: @"3000"
-[GBVersionTracking previousBuild];					//Returns: @"2102"
+[GBVersionTracking currentBuild];					//Returns: @"3004"
+[GBVersionTracking previousBuild];					//Returns: @"2107"
+[GBVersionTracking firstInstalledBuild];			//Returns: @"1000"
 [GBVersionTracking buildHistory];					//Returns: [@"1000", @"2043", @"2107", @"3004"]
  ```
 
@@ -38,7 +40,7 @@ Don't forget to import header:
 Installation
 ------------
 
-Use CocoaPods, add this to your project's Podfile and run `pod update`:
+Use CocoaPods, add this to your project's Podfile and run `pod install`:
 
 ```
 pod 'GBVersionTracking'
@@ -47,7 +49,7 @@ pod 'GBVersionTracking'
 Copyright & License
 ------------
 
-Copyright 2013 Luka Mirosevic
+Copyright 2015 Luka Mirosevic
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
