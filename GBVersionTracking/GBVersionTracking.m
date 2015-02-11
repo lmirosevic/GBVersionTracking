@@ -3,25 +3,25 @@
 //  GBVersionTracking
 //
 //  Created by Luka Mirosevic on 28/01/2013.
-//  Copyright (c) 2013 Goonbee. All rights reserved.
+//  Copyright (c) 2015 Goonbee. All rights reserved.
 //
 
 #import "GBVersionTracking.h"
 
-// Allows making public interface a little simpler by wrapping all singleton instance methods inside class methods
+// Allows making public interface a little simpler by hiding all singleton instance methods and presenting them as class methods
 #define _controller [GBVersionTracking sharedController]
 
-static NSString * const kGBVersionTrail = @"kGBVersionTrail";
-static NSString * const kGBVersion = @"kGBVersion";
-static NSString * const kGBBuild = @"kGBBuild";
+static NSString * const kUserDefaultsVersionTrailKey =      @"kGBVersionTrail";
+static NSString * const kVersionsKey =                      @"kGBVersion";
+static NSString * const kBuildsKey =                        @"kGBBuild";
 
 
 @interface GBVersionTracking ()
 
-@property (strong, nonatomic) NSDictionary          *versionTrail;
-@property (assign, nonatomic) BOOL                  isFirstLaunchEver;
-@property (assign, nonatomic) BOOL                  isFirstLaunchForVersion;
-@property (assign, nonatomic) BOOL                  isFirstLaunchForBuild;
+@property (strong, nonatomic) NSDictionary                  *versionTrail;
+@property (assign, nonatomic) BOOL                          isFirstLaunchEver;
+@property (assign, nonatomic) BOOL                          isFirstLaunchForVersion;
+@property (assign, nonatomic) BOOL                          isFirstLaunchForBuild;
 
 @end
 
@@ -30,7 +30,7 @@ static NSString * const kGBBuild = @"kGBBuild";
 
 #pragma mark - Storage
 
-+(GBVersionTracking *)sharedController {
++ (GBVersionTracking *)sharedController {
     static GBVersionTracking *sharedController;
     @synchronized(self) {
         if (!sharedController) {
@@ -42,72 +42,71 @@ static NSString * const kGBBuild = @"kGBBuild";
 
 #pragma mark - Public API
 
-//store a version crumb tail in NSUserDefaults
-+(void)track {
++ (void)track {
     BOOL needsSync = NO;
     
     //load history
-    NSDictionary *oldVersionTrail = [[NSUserDefaults standardUserDefaults] objectForKey:kGBVersionTrail];
+    NSDictionary *oldVersionTrail = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsVersionTrailKey];
     
     //check if its the first ever launch
     if (oldVersionTrail == nil) {
         _controller.isFirstLaunchEver = YES;
         
-        _controller.versionTrail = @{kGBVersion: [NSMutableArray new], kGBBuild: [NSMutableArray new]};
+        _controller.versionTrail = @{kVersionsKey: [NSMutableArray new], kBuildsKey: [NSMutableArray new]};
     }
     else {
         _controller.isFirstLaunchEver = NO;
         
         //read the old datastructure out but make a deeply mutable copy of it first
-        _controller.versionTrail = @{kGBVersion: [oldVersionTrail[kGBVersion] mutableCopy], kGBBuild: [oldVersionTrail[kGBBuild] mutableCopy]};
+        _controller.versionTrail = @{kVersionsKey: [oldVersionTrail[kVersionsKey] mutableCopy], kBuildsKey: [oldVersionTrail[kBuildsKey] mutableCopy]};
         
         needsSync = YES;
     }
     
     //check if this version was previously launched
-    if ([_controller.versionTrail[kGBVersion] containsObject:[self currentVersion]]) {
+    if ([_controller.versionTrail[kVersionsKey] containsObject:[self currentVersion]]) {
         _controller.isFirstLaunchForVersion = NO;
     }
     else {
         _controller.isFirstLaunchForVersion = YES;
         
-        [_controller.versionTrail[kGBVersion] addObject:[self currentVersion]];
+        [_controller.versionTrail[kVersionsKey] addObject:[self currentVersion]];
         
         needsSync = YES;
     }
     
     //check if this build was previously launched
-    if ([_controller.versionTrail[kGBBuild] containsObject:[self currentBuild]]) {
+    if ([_controller.versionTrail[kBuildsKey] containsObject:[self currentBuild]]) {
         _controller.isFirstLaunchForBuild = NO;
     }
     else {
         _controller.isFirstLaunchForBuild = YES;
         
-        [_controller.versionTrail[kGBBuild] addObject:[self currentBuild]];
+        [_controller.versionTrail[kBuildsKey] addObject:[self currentBuild]];
         
         needsSync = YES;
     }
     
     //store the new version stuff
     if (needsSync) {
-        [[NSUserDefaults standardUserDefaults] setObject:_controller.versionTrail forKey:kGBVersionTrail];
+        [[NSUserDefaults standardUserDefaults] setObject:_controller.versionTrail forKey:kUserDefaultsVersionTrailKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
 
-+(BOOL)isFirstLaunchEver {
++ (BOOL)isFirstLaunchEver {
     return _controller.isFirstLaunchEver;
 }
 
-+(BOOL)isFirstLaunchForVersion {
++ (BOOL)isFirstLaunchForVersion {
     return _controller.isFirstLaunchForVersion;
 }
 
-+(BOOL)isFirstLaunchForBuild {
++ (BOOL)isFirstLaunchForBuild {
     return _controller.isFirstLaunchForBuild;
 }
 
-+(BOOL)isFirstLaunchForVersion:(NSString *)version {
++ (BOOL)isFirstLaunchForVersion:(NSString *)version {
     if ([[self currentVersion] isEqualToString:version]) {
         return [self isFirstLaunchForVersion];
     }
@@ -116,7 +115,7 @@ static NSString * const kGBBuild = @"kGBBuild";
     }
 }
 
-+(BOOL)isFirstLaunchForBuild:(NSString *)build {
++ (BOOL)isFirstLaunchForBuild:(NSString *)build {
     if ([[self currentBuild] isEqualToString:build]) {
         return [self isFirstLaunchForBuild];
     }
@@ -125,52 +124,60 @@ static NSString * const kGBBuild = @"kGBBuild";
     }
 }
 
-+(void)callBlockOnFirstLaunchOfVersion:(NSString *)version block:(GBVersionTrackingHandlerBlock)block {
++ (void)callBlockOnFirstLaunchOfVersion:(NSString *)version block:(GBVersionTrackingHandlerBlock)block {
     if ([self isFirstLaunchForVersion:version] && block) {
         block();
     }
 }
 
-+(void)callBlockOnFirstLaunchOfBuild:(NSString *)build block:(GBVersionTrackingHandlerBlock)block {
++ (void)callBlockOnFirstLaunchOfBuild:(NSString *)build block:(GBVersionTrackingHandlerBlock)block {
     if ([self isFirstLaunchForBuild:build] && block) {
         block();
     }
 }
 
-#pragma mark - Version
+#pragma mark - Versions
 
-+(NSString *)currentVersion {
++ (NSString *)currentVersion {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
-+(NSString *)previousVersion {
-    NSUInteger count = [_controller.versionTrail[kGBVersion] count];
++ (NSString *)previousVersion {
+    NSUInteger count = [_controller.versionTrail[kVersionsKey] count];
     if (count >= 2) {
-        return _controller.versionTrail[kGBVersion][count-2];
+        return _controller.versionTrail[kVersionsKey][count-2];
     }
     else return nil;
 }
 
-+(NSArray *)versionHistory {
-    return _controller.versionTrail[kGBVersion];
++ (NSString *)firstInstalledVersion {
+    return [_controller.versionTrail[kVersionsKey] firstObject];
 }
 
-#pragma mark - Build
++ (NSArray *)versionHistory {
+    return _controller.versionTrail[kVersionsKey];
+}
 
-+(NSString *)currentBuild {
+#pragma mark - Builds
+
++ (NSString *)currentBuild {
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
 }
 
-+(NSString *)previousBuild {
-    NSUInteger count = [_controller.versionTrail[kGBBuild] count];
++ (NSString *)previousBuild {
+    NSUInteger count = [_controller.versionTrail[kBuildsKey] count];
     if (count >= 2) {
-        return _controller.versionTrail[kGBBuild][count-2];
+        return _controller.versionTrail[kBuildsKey][count-2];
     }
     else return nil;
 }
 
-+(NSArray *)buildHistory {
-    return _controller.versionTrail[kGBBuild];
++ (NSString *)firstInstalledBuild {
+    return [_controller.versionTrail[kBuildsKey] firstObject];
+}
+
++ (NSArray *)buildHistory {
+    return _controller.versionTrail[kBuildsKey];
 }
 
 @end
