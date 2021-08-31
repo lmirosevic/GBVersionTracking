@@ -60,7 +60,7 @@ typedef void(^GBVersionTrackingHandlerBlock)(void);
 /**
  Returns the previous version of the app, as defined in the PList, e.g. "4.3".
  */
-+ (NSString *)previousVersion;
++ (nullable NSString *)previousVersion;
 
 /**
  Returns the version which the user first installed the app at.
@@ -80,7 +80,7 @@ typedef void(^GBVersionTrackingHandlerBlock)(void);
 /**
  Returns the previous build of the app, as defined in the PList, e.g. "4300".
  */
-+ (NSString *)previousBuild;
++ (nullable NSString *)previousBuild;
 
 /**
  Returns the version which the user first installed the app at.

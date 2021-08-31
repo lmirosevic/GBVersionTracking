@@ -142,7 +142,7 @@ static NSString * const kBuildsKey =                        @"kGBBuild";
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
-+ (NSString *)previousVersion {
++ (nullable NSString *)previousVersion {
     NSUInteger count = [_controller.versionTrail[kVersionsKey] count];
     if (count >= 2) {
         return _controller.versionTrail[kVersionsKey][count-2];
@@ -164,7 +164,7 @@ static NSString * const kBuildsKey =                        @"kGBBuild";
     return [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
 }
 
-+ (NSString *)previousBuild {
++ (nullable NSString *)previousBuild {
     NSUInteger count = [_controller.versionTrail[kBuildsKey] count];
     if (count >= 2) {
         return _controller.versionTrail[kBuildsKey][count-2];
